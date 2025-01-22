@@ -1,5 +1,5 @@
 from pathlib import Path
-
+import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-3=w=+_o(1j5(a*v4kifz8sg$vm-228*678bg4xm#y+$lik#jyz
 DEBUG = True
 
  # Add allowed hosts if needed
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','job_app.com','*']
 
 # Application definition
 INSTALLED_APPS = [
