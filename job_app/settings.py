@@ -10,10 +10,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-3=w=+_o(1j5(a*v4kifz8sg$vm-228*678bg4xm#y+$lik#jyz'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
  # Add allowed hosts if needed
-ALLOWED_HOSTS = ['localhost', '127.0.0.1','job_app.com','*']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1','job_app.onrender.com','*']
 
 # Application definition
 INSTALLED_APPS = [
