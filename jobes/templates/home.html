@@ -1,0 +1,86 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Portal Home</title>
+    <link rel="icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #cbec54;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-top: 50px;
+            color: #131313;
+        }
+
+        a {
+            display: inline-block;
+            padding: 10px 20px;
+            margin: 15px;
+            font-size: 1.2rem;
+            text-decoration: none;
+            border-radius: 5px;
+            background-color: #4A90E2;
+            color: white;
+            transition: background-color 0.3s;
+        }
+
+        a:hover {
+            background-color: #357ABD;
+        }
+
+        .message {
+            padding: 15px;
+            margin: 20px;
+            border-radius: 5px;
+        }
+
+        .success {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .warning {
+            background-color: #f44336;
+            color: white;
+        }
+
+        
+        @media (max-width: 600px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            a {
+                font-size: 1rem;
+                padding: 8px 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to the Job Portal</h1>
+    
+    {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="message {% if message.tags %}{{ message.tags }}{% endif %}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+    
+    <a href="{% url 'signup' %}">Sign Up</a>
+    <a href="{% url 'job_listings' %}">View Jobs</a>
+</body>
+</html>

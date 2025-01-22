@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ job.title }}</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+
+        .job-container {
+            max-width: 800px;
+            margin: 50px auto;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px 30px;
+        }
+
+        .job-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #4a90e2;
+        }
+
+        .job-description {
+            text-align: center;
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .job-details {
+            margin-bottom: 25px;
+        }
+
+        .job-detail-text {
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .apply-button {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            background-color: #4a90e2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .apply-button:hover {
+            background-color: #357abd;
+        }
+    </style>
+</head>
+<body>
+    <div class="job-container">
+        <h1 class="job-title">{{ job.title }}</h1>
+        <p class="job-description">{{ job.description }}</p>
+
+        <div class="job-details">
+            <p class="job-detail-text"><strong>Location:</strong> {{ job.location }}</p>
+            <p class="job-detail-text"><strong>Job Type:</strong> {{ job.job_type }}</p>
+            <p class="job-detail-text"><strong>Required Skills:</strong> {{ job.required_skills }}</p>
+            <p class="job-detail-text"><strong>Salary Range:</strong> {{ job.salary_range }}</p>
+        </div>
+
+        <form method="post" class="apply-form">
+            {% csrf_token %}
+            <button type="submit" class="apply-button">Apply Now</button>
+        </form>
+    </div>
+</body>
+</html>
